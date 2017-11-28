@@ -35,10 +35,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    @product = @review.product
     @review.destroy
     flash[:notice] = "review deleted!"
-    redirect_to "product_path"
+    redirect_to "/products/#{params[:product_id]}"
 
   end
 

@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <nav><a href="<%= root_path %>">Homepage</a></nav>
+    <nav><a href="<%= new_product_path %>">New Product</a></nav>
+
     <%= yield %>
+
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% end %>
+    
   </body>
 </html>

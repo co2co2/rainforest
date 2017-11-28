@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def new
+    @product = Product.new
+  end
+
   def create
     @product = Product.new
     @product.name = params[:product][:name]
@@ -14,14 +18,11 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to products_url
     else
-      redirect_to new_product_url
+    render :new
     end
   end
 
 
-  def new
-    @product = Product.new
-  end
 
   def edit
     @product = Product.find(params[:id])
@@ -40,7 +41,6 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to products_url
     else
-
       render :new
     end
   end

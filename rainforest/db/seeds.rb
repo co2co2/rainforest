@@ -9,10 +9,15 @@
 product1 = Product.create(name: 'Computer', description: 'Device to access the web', price_in_cents: 150000)
 
 product2 = Product.create(name: 'Television', description: 'Watch TV shows', price_in_cents: 30000)
-#
-#
-# t.string "name"
-# t.text "description"
-# t.integer "price_in_cents"
-# t.datetime "created_at", null: false
-# t.datetime "updated_at", null: false
+
+product3 = Product.create(name: 'Cup', description: 'Holds Liquid', price_in_cents: 10)
+
+review1 = Review.create(comment: "Best Product Ever!!", product_id: 1, created_at: "2017-11-28 19:59:45", updated_at: "2017-11-28 19:59:45")
+
+review2 = Review.create(comment: "Too Bright", product_id: 2, created_at: "2017-11-28 20:00:24", updated_at: "2017-11-28 20:00:24")
+
+review3 = Review.create(comment: "Best Way to drink coffee", product_id: 3, created_at: "2017-11-28 20:02:01", updated_at: "2017-11-28 20:02:01")
+
+review4 = Review.create(comment: "Too addictive", product_id: 1, created_at: "2017-11-28 20:02:35", updated_at: "2017-11-28 20:02:35")
+
+review5 = Review.create(comment: "Love to watch as I go to sleep", product_id: 2, created_at: "2017-11-28 20:07:57", updated_at: "2017-11-28 20:07:57")

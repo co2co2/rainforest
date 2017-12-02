@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def ensure_logged_in
+    unless current_user
+      flash[:notice] = "Please log in"
+      redirect_to new_session_url
+    end
+  end
 end

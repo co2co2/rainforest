@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
-  resource :users, only: %i(create new)
-  resource :sessions,only: %i(create new destroy)
+  resources :users
+  resources :sessions,only: %i(create new destroy)
 
   root 'products#index'
 
